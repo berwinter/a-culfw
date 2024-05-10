@@ -53,7 +53,7 @@
 #include "rf_mbus.h"                    // for WMBUS_NONE, mbus_mode
 #endif
 #ifdef HAS_REDAC
-#include "rf_REDAC.h"                    // for WMBUS_NONE, mbus_mode
+#include "rf_redac.h"                    // for WMBUS_NONE, mbus_mode
 #endif
 #include "rf_mode.h"
 #include "multi_CC.h"
@@ -146,7 +146,7 @@ set_txrestore()
   }
 #endif
 #ifdef HAS_REDAC	
-  if(REDAC_mode != REDAC_NONE) {
+  if(redac_mode != REDAC_NONE) {
     // rf_redac.c handles cc1101 configuration on its own.
     // if refac is activated the configuration must not be
     // changed here, that leads to a crash!

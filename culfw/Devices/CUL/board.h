@@ -76,6 +76,7 @@
 #if defined(CUL_V3)
 #  define TTY_BUFSIZE          128      // RAM: TTY_BUFSIZE*4
 #if defined(_868MHZ)
+#  define HAS_REDAC
 #  undef HAS_MBUS                      // PROGMEM: 2536
 #  define MBUS_NO_TX                       // PROGMEM:  962
 #  undef HAS_RFNATIVE                  // PROGMEM:  580

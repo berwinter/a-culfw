@@ -73,7 +73,7 @@ const PROGMEM t_fntab fntab[] = {
   { 'b', rf_mbus_func },
 #endif
 #ifdef HAS_REDAC
-  { 's', rf_redac_func}
+  { 'r', rf_redac_func },
 #endif
   { 'C', ccreg },
 #ifdef HAS_RWE
