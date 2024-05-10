@@ -22,7 +22,7 @@
 #define HAS_CC1101_PLL_LOCK_CHECK_MSG_SW	// PROGMEM:  22b
 
 #undef  RFR_DEBUG                       // PROGMEM:  354b  RAM: 14b
-#undef  HAS_FASTRF                      // PROGMEM:  468b  RAM:  1b
+#define  HAS_FASTRF                      // PROGMEM:  468b  RAM:  1b
 
 #if defined(CUL_V3_ZWAVE)
 #  define CUL_V3
