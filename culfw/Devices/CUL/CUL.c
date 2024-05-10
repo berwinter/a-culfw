@@ -59,6 +59,9 @@
 #ifdef HAS_ZWAVE
 #include "rf_zwave.h"                   // for rf_zwave_task, zwave_func
 #endif
+#ifdef HAS_REDAC
+#include "rf_redac.h"
+#endif
 
 const PROGMEM t_fntab fntab[] = {
 
@@ -68,6 +71,9 @@ const PROGMEM t_fntab fntab[] = {
   { 'B', prepare_boot },
 #ifdef HAS_MBUS
   { 'b', rf_mbus_func },
+#endif
+#ifdef HAS_REDAC
+  { 's', rf_redac_func}
 #endif
   { 'C', ccreg },
 #ifdef HAS_RWE
@@ -223,6 +229,9 @@ main(void)
 #endif
 #ifdef HAS_MBUS
     rf_mbus_task();
+#endif
+#ifdef HAS_REDAC
+    rf_redac_task();
 #endif
 #ifdef HAS_ZWAVE
     rf_zwave_task();
