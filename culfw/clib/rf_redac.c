@@ -18,7 +18,8 @@
 #include "display.h"                    // for DS_P, DH2, DNL, DC
 #include "redac/3outof6.h"               // for DECODING_3OUTOF6_OK
 #include "redac/redac_defs.h"             // for uint8, FALSE, TRUE
-#include "redac/rf_settings.h"            // for tCFG
+#include "redac/rf_settings.h"            // for rCFG
+#include "redac/redac_packet.h"           // for REDAC_MODE, etc
 #include "rf_redac.h"
 #include "rf_receive.h"                 // for REP_RSSI
 #include "stringfunc.h"                 // for fromhex
@@ -41,7 +42,6 @@ uint8 RedacBytes[100];
 uint8   radio_mode = RADIO_MODE_NONE;
 uint8_t  redac_mode = REDAC_NONE;
 RXinfoDescr RXinfo;
-TXinfoDescr TXinfo;
 
 static void halRfReadFifo(uint8* data, uint8 length, uint8 *rssi, uint8 *lqi) {
   CC1100_ASSERT;
@@ -165,7 +165,6 @@ void rf_redac_init(uint8_t mmode, uint8_t rmode) {
   ccStrobe( CC1100_SCAL );
 
   memset( &RXinfo, 0, sizeof( RXinfo ));
-  memset( &TXinfo, 0, sizeof( TXinfo ));
 
   my_delay_ms(4);
 }
