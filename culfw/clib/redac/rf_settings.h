@@ -63,7 +63,7 @@ static const uint8_t PROGMEM redacRfConfig[] = {
     CC1100_MDMCFG1, 0x22,   // MDMCFG1   Modem configuration.
     CC1100_MDMCFG0, 0xF8,   // MDMCFG0   Modem configuration.
     CC1100_CHANNR, 0x00,   // CHANNR    Channel number.
-    CC1100_DEVIATN, 0x30,   // DEVIATN   Modem deviation setting (when FSK modulation is enabled).
+    CC1100_DEVIATN, 0x34,   // DEVIATN   Modem deviation setting (when FSK modulation is enabled).
     CC1100_FREND1, 0x56,   // FREND1    Front end RX configuration.
     CC1100_FREND0, 0x10,   // FREND0    Front end RX configuration.
     CC1100_MCSM0, 0x18,   // MCSM0     Main Radio Control State Machine configuration.
