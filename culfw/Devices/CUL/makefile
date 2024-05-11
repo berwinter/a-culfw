@@ -110,7 +110,7 @@ MSG_CLEANING = Cleaning project:
 OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
 
 ifeq ($(TARGET), CUL_V3)
-SRC += ../../clib/rf_mbus.c ../../clib/mbus/manchester.c ../../clib/mbus/3outof6.c ../../clib/mbus/mbus_packet.c ../../clib/mbus/crc.c
+#SRC += ../../clib/rf_mbus.c ../../clib/mbus/manchester.c ../../clib/mbus/3outof6.c ../../clib/mbus/mbus_packet.c ../../clib/mbus/crc.c
 SRC += ../../clib/rf_redac.c ../../clib/redac/3outof6.c ../../clib/redac/redac_packet.c ../../clib/redac/crc.c
 endif
 

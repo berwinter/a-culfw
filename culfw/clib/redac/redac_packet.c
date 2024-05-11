@@ -146,7 +146,7 @@ uint16 decodeRXBytesRedac(uint8* pByte, uint8* pPacket, uint16 packetSize)
   bytesRemaining = packetSize;
   bytesEncoded   = 0;
   crcField       = 0;
-  crc            = 0;
+  crc            = 0xffff;
       
   // Decode packet      
   while (bytesRemaining)
@@ -164,7 +164,7 @@ uint16 decodeRXBytesRedac(uint8* pByte, uint8* pPacket, uint16 packetSize)
       bytesEncoded    += 1;
       
       // The last byte the low byte of the CRC field
-     if (LO_UINT16(~crc) != *(pPacket ))
+     if (LO_UINT16(crc) != *(pPacket ))
         return (PACKET_CRC_ERROR);
     }
          
@@ -190,9 +190,9 @@ uint16 decodeRXBytesRedac(uint8* pByte, uint8* pPacket, uint16 packetSize)
       // Check CRC field
       if (crcField)
       {        
-       if (LO_UINT16(~crc) != *(pPacket + 1 ))
+       if (LO_UINT16(crc) != *(pPacket + 1 ))
         return (PACKET_CRC_ERROR);
-       if (HI_UINT16(~crc) != *pPacket)
+       if (HI_UINT16(crc) != *pPacket)
           return (PACKET_CRC_ERROR);
        
        crcField = 0;        
@@ -204,7 +204,7 @@ uint16 decodeRXBytesRedac(uint8* pByte, uint8* pPacket, uint16 packetSize)
       {
         crc = crcCalc(crc, *(pPacket));
         // The packet byte is a CRC-field
-       if (HI_UINT16(~crc) != *(pPacket + 1))
+       if (HI_UINT16(crc) != *(pPacket + 1))
         return (PACKET_CRC_ERROR);
       }
 

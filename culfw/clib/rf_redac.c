@@ -215,7 +215,7 @@ void rf_redac_task(void) {
             return;
 	  }		
           RXinfo.lengthField = bytesDecoded[0];
-          RXinfo.length = byteSize(0, 0, (packetSize(RXinfo.lengthField)));
+          RXinfo.length = byteSize(0, 0, RXinfo.lengthField);
         }
 
 	// check if incoming data will fit into buffer
@@ -290,14 +290,14 @@ void rf_redac_task(void) {
     uint16_t rxStatus = PACKET_CODING_ERROR;
 
     if (RXinfo.mode == REDAC_MODE)
-      rxStatus = decodeRXBytesRedac(RedacBytes, RedacPacket, packetSize(RXinfo.lengthField));
+      rxStatus = decodeRXBytesRedac(RedacBytes, RedacPacket, RXinfo.lengthField);
 
     if (rxStatus == PACKET_OK) {
 
       MULTICC_PREFIX();
-      DC( 'b' );
+      DC( 'r' );
 
-      for (uint8_t i=0; i < packetSize(RedacPacket[0]); i++) {
+      for (uint8_t i=0; i < RedacPacket[0]-2; i++) {
         DH2( RedacPacket[i] );
 //	DC( ' ' );
       }

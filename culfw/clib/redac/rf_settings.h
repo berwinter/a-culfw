@@ -47,7 +47,7 @@ static const uint8_t PROGMEM redacRfConfig[] = {
 #endif
     CC1100_SYNC1, 0xAF,
     CC1100_SYNC0, 0x82,
-    CC1100_MCSM1, 0x0C,
+    CC1100_MCSM1, 0x00,
 
     CC1100_IOCFG2, 0x06,   // IOCFG2    GDO2 output pin configuration.
     CC1100_IOCFG0, 0x00,   // IOCFG0   GDO0 output pin configuration. Refer to SmartRF� Studio User Manual for detailed pseudo register explanation.
@@ -56,8 +56,8 @@ static const uint8_t PROGMEM redacRfConfig[] = {
     CC1100_FSCTRL0, 0x00,   // FSCTRL0   Frequency synthesizer control.
     CC1100_FREQ2, 0x21,   // FREQ2     Frequency control word, high byte.
     CC1100_FREQ1, 0x66,   // FREQ1     Frequency control word, middle byte.
-    CC1100_FREQ0, 0x7F,   // FREQ0     Frequency control word, low byte.
-    CC1100_MDMCFG4, 0xF7,   // MDMCFG4   Modem configuration.
+    CC1100_FREQ0, 0x66,   // FREQ0     Frequency control word, low byte.
+    CC1100_MDMCFG4, 0xC7,   // MDMCFG4   Modem configuration.
     CC1100_MDMCFG3, 0x83,   // MDMCFG3   Modem configuration.
     CC1100_MDMCFG2, 0x06,   // !! 05 !! MDMCFG2   Modem configuration.
     CC1100_MDMCFG1, 0x22,   // MDMCFG1   Modem configuration.
@@ -67,19 +67,19 @@ static const uint8_t PROGMEM redacRfConfig[] = {
     CC1100_FREND1, 0x56,   // FREND1    Front end RX configuration.
     CC1100_FREND0, 0x10,   // FREND0    Front end RX configuration.
     CC1100_MCSM0, 0x18,   // MCSM0     Main Radio Control State Machine configuration.
-    CC1100_FOCCFG, 0x1A,   // FOCCFG    Frequency Offset Compensation Configuration.
-    CC1100_BSCFG, 0x6E,   // BSCFG     Bit synchronization Configuration.
-    CC1100_AGCCTRL2, 0x03,   // AGCCTRL2  AGC control.
+    CC1100_FOCCFG, 0x19,   // FOCCFG    Frequency Offset Compensation Configuration.
+    CC1100_BSCFG, 0x6F,   // BSCFG     Bit synchronization Configuration.
+    CC1100_AGCCTRL2, 0x43,   // AGCCTRL2  AGC control.
     CC1100_AGCCTRL1, 0x40,   // AGCCTRL1  AGC control.
     CC1100_AGCCTRL0, 0x91,   // AGCCTRL0  AGC control.
-    CC1100_FSCAL3, 0xEA,   // FSCAL3    Frequency synthesizer calibration.
-    CC1100_FSCAL2, 0x2A,   // FSCAL2    Frequency synthesizer calibration.
-    CC1100_FSCAL1, 0x00,   // FSCAL1    Frequency synthesizer calibration.
+    CC1100_FSCAL3, 0xEF,   // FSCAL3    Frequency synthesizer calibration.
+    CC1100_FSCAL2, 0x2B,   // FSCAL2    Frequency synthesizer calibration.
+    CC1100_FSCAL1, 0x17,   // FSCAL1    Frequency synthesizer calibration.
     CC1100_FSCAL0, 0x1F,   // FSCAL0    Frequency synthesizer calibration.
     CC1100_FSTEST, 0x59,   // FSTEST    Frequency synthesizer calibration.
-    CC1100_TEST2, 0x81,   // TEST2     Various test settings.
-    CC1100_TEST1, 0x35,   // TEST1     Various test settings.
-    CC1100_TEST0, 0x09,   // TEST0     Various test settings.
+    CC1100_TEST2, 0x88,   // TEST2     Various test settings.
+    CC1100_TEST1, 0x31,   // TEST1     Various test settings.
+    CC1100_TEST0, 0x0B,   // TEST0     Various test settings.
     CC1100_PKTCTRL1, 0x04,   // !! 00 !! PKTCTRL1  Packet automation control.
     CC1100_PKTCTRL0, 0x00,   // PKTCTRL0  Packet automation control.
     CC1100_ADDR, 0x00,   // ADDR      Device address.
